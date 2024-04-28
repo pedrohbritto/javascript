@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>País</h1>
+    Onde você mora? <input type="text" name="pais" id="pais">
+    <input type="button" value="Enviar" onclick="enviar()">
+    <div id="res1"></div>
+    <div id="res2"></div>
+    <script>
+       function enviar(){
+        var p = document.getElementById('pais')
+        var res = document.getElementById('res1')
+        var res2 = document.getElementById('res2')
+        res.innerHTML = `Você mora no(a) ${p.value}`
+        if(p.value == 'Brasil'){
+            res2.innerHTML = 'Você é brasileiro!'
+        }else{
+            res2.innerHTML = 'Você é estrangeiro!'
+        }
+       }
+    </script>
+</body>
+</html>
