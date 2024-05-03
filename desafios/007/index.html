@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <style>
+        body{
+            font: normal 18pt arial;
+        }
+        input{
+            padding: 20px;
+            width: 250px;
+        }
+        div{
+            margin-top: 20px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ &rarr; US$</h1>
+    <input type="button" value="Converter" onclick="converter()">
+    <div id="res">Clique no botão acima para iniciar.</div>
+    <script>
+        var d = Number(window.prompt('Quanto está a cotação do dolar?'))
+        function converter(){
+        var r = Number(window.prompt('Quantos R$ você tem na carteira?'))
+        var re = window.document.getElementById('res')
+        var res = r / d
+        re.innerHTML = (`Você vai conseguir ${res} US$.`)
+    }   
+    </script>
+</body>
+</html>

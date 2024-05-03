@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font: normal 18pt arial;
+        }
+        input{
+            padding: 20px;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <input type="button" value="Converter" onclick="b1()">
+    <p id="res">Clique no botão acima para iniciar!</p>
+    <p id="res1"></p>
+    <script>
+        function b1(){
+            var n = Number(window.prompt('Digite uma distância em metro(m)'))
+            var r1 = n / 1000
+            var r2 =  n / 100
+            var r3 = n / 10
+            var r4 = n * 10 
+            var r5 = n * 100
+            var r6 = n * 1000
+            var totaln = n.toString().replace("." , ",")
+            var total1 = r1.toString().replace("." , ",")
+            var total2 = r2.toString().replace("." , ",")
+            var total3 = r3.toString().replace("." , ",")
+            var total4 = r4.toString().replace("." , ",")
+            var total5 = r5.toString().replace("." , ",")
+            var total6 = r6.toString().replace("." , ",")
+            var res = window.document.getElementById('res')
+            res.innerHTML = `A distância de ${totaln} metros, corresponde a...`
+            res.style.font = 'bold 22pt arial'
+            var res1 = window.document.getElementById('res1')
+            res1.innerHTML = ` ${total1} quilômetros (Km) <br>${total2} hectômetros (Hm)<br>${total3} decâmetros (Dam)<br>${total4} Decímetros (DM)<br>${total5} Centímetros (Cm)<br> ${total6} Milímetro (Mm)`
+        }
+    </script>
+</body>
+</html>

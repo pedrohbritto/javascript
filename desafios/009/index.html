@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste Salarial</title>
+    <style>
+        body{
+            font: normal 18pt arial;
+        }
+        input{
+            padding: 20px;
+            width: 250px;
+        }
+        div{
+            margin-top: 30px;
+            line-height: 2em;
+        }
+    </style>
+</head>
+    <h1>Reajuste Salarial</h1>
+    <input type="button" value="Reajustar Salário" onclick="reajuste()">
+    <div id="res">Clique no botão acima para iniciar.</div>
+    <div id="res1"></div>
+    <script>
+        function reajuste(){
+            var nome =  window.prompt('Qual é o nome do funcionário?')
+            var salario = Number(window.prompt(`Qual é o salário de ${nome}?`))
+            var porcentagem = Number(window.prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`))
+            var res = window.document.getElementById('res')
+            var res1 = window.document.getElementById('res1')
+            var reajustado = salario * (porcentagem / 100)
+            var resultado = reajustado + salario
+            var ts = salario.toString().replace("." , ",")
+            var tp = porcentagem.toString().replace("." , ",")
+            var tr = reajustado.toString().replace("." , ",")
+            var tres = resultado.toString().replace("." , ",")
+            res.innerHTML = (`${nome} recebeu um aumento salarial!`)
+            res.style.font = 'bold 30pt arial'
+            res1.innerHTML = (`O salário atual era R$ ${ts}. <br>Com um aumento de ${tp}%, o salário vai aumentar R$ ${tr} no próximo mês.<br>E a partir dai, ${nome} vai passar a ganhar R$ ${tres}.`)
+
+        }
+    </script>
+</body>
+</html>
