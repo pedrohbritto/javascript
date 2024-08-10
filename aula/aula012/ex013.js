@@ -1,4 +1,4 @@
-var agora = new Date()
+    var agora = new Date()
 var dia = agora.getDay()
 /*
     0 = Domingo

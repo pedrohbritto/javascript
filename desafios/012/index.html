@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço Mudou</title>
+    <style>
+        body{
+            font: normal 18pt arial;
+        }
+        input{
+            padding: 20px;
+            width: 250px;
+        }
+        div{
+            margin-top: 30px;
+            line-height: 1.5em;
+        }
+    </style>
+</head>
+    <body>
+        <h1>Preço mudou</h1>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">Clique no botão acima para analisar a mudança de preço.</div>
+    <div id="res1"></div>
+    <div id="res2"></div>
+    <div id="res3"></div>
+    <div id="res4"></div>
+    <script>
+        function verificar(){
+       var antes = Number(window.prompt('Qual era o preço anterior do produto?'))
+       var agora = Number(window.prompt('Qual o preço atual do produto?'))
+       var res = document.getElementById('res')
+       var res1 = document.getElementById('res1')
+       var res2 = document.getElementById('res2')
+       var res3 = document.getElementById('res3')
+       var res4 = document.getElementById('res4')
+       var subiu = agora - antes
+       var caiu = antes - agora
+       var tantes = antes.toString().replace("." , ",")
+       var tagora = agora.toString().replace("." , ",")
+       var resultado = (tagora - tantes) / tantes * 100
+       var resultado2 = (tantes - tagora) / tagora * 100
+       var subiu2 = subiu.toFixed(2);
+       var caiu2 = caiu.toFixed(2);
+       var resultado3 = resultado.toFixed(2)
+       var resultado4 = resultado2.toFixed(2)
+       var tsubiu = subiu2.toString().replace("." , ",")
+       var tcaiu = caiu2.toString().replace("." , ",")
+       var tresultado = resultado3.toString().replace("." , ",")
+       var tresultado2 = resultado4.toString().replace("." , ",")
+       res.innerHTML = 'Analisando os valores informados'
+       res1.innerHTML = `O produto custava R$ ${tantes} e agora custa R$ ${tagora}`
+       res.style.font = 'bolder 30px Arial'
+       if(antes == agora){
+        res2.innerHTML = 'O Preço não mudou.'
+       }if( antes < agora){
+        res2.innerHTML = `Hoje o produto está mais caro.`
+        res3.innerHTML = `O preço subiu R$ ${tsubiu} em relação ao preço anterior.`
+        res4.innerHTML = ` Uma variação de ${tresultado}% para cima.`
+       }else{
+        res2.innerHTML ='Hoje o produto está mais barato.'
+        res3.innerHTML = `O preço caiu R$ ${tcaiu} em relação ao preço anterior.`
+        res4.innerHTML = ` Uma variação de ${tresultado2}% para baixo.`
+       }
+       
+    }
+    </script>
+    </body>
+</html>
